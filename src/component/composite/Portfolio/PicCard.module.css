@@ -1,0 +1,72 @@
+.container {
+  position: relative;
+  cursor: pointer;
+}
+.bar {
+  width: var(--card-width);
+  height: calc(var(--card-width) * 24/300);
+  background-color: #dddddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 5px;
+  padding-left: 15px;
+}
+.bar > span {
+  display: block;
+  width: calc(var(--card-width) * 16/300);
+  height: calc(var(--card-width) * 16/300);
+  background-color: #ff5f57;
+  border-radius: 50%;
+}
+.bar>span:nth-child(2) {
+  background-color: #ffbd2e;
+}
+.bar>span:last-child {
+  background-color: #28ca41;
+}
+.label {
+  width: calc(var(--card-width) * 160/300);
+  height: calc(var(--card-width) * 40/300);
+  background-color: red;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+  text-align: center;
+  color: white;
+  padding-top: 4px;
+  font-size: calc(var(--card-width) * 24/300);
+  font-weight: bold;
+  transform: rotate(45deg);
+  position: absolute;
+  right: calc(var(--card-width) * (-37.5)/300);
+  top: calc(var(--card-width) * 22.5/300);
+  z-index: 5;
+}
+.image {
+  width: var(--card-width);
+  height: calc(var(--card-width) * 2/3);
+  position: relative;
+}
+.back {
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0.1;
+  filter: brightness(50%) sepia(0.3);
+  transition: all 0.1 ease-in-out;
+}
+.container:hover .back {
+  visibility: visible;
+  opacity: 1;
+  animation: godown 100ms ease-in-out forwards;
+  transform-origin: top;
+}
+@keyframes godown {
+  from {
+    transform: scaleY(0.3);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}

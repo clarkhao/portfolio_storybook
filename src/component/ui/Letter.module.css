@@ -1,0 +1,42 @@
+.container {
+  font-family: monospace;
+  font-size: var(--character-size);
+  line-height: var(--character-size);
+  width: calc(var(--character-size) * 0.6);
+  font-weight: 700;
+  display: inline-block;
+  transform-origin: center;
+  box-sizing: border-box;
+  color: var(--character-color);
+}
+.container:hover {
+  color: red;
+}
+.bouncy {
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+@keyframes bounce {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  25% {
+    transform: scaleX(1.4) scaleY(0.6);
+    font-weight: 500;
+  }
+  40% {
+    transform: scaleX(1.4) scaleY(0.6);
+    font-weight: 500;
+  }
+  60% {
+    transform: scaleX(1) scaleY(1);
+    font-weight: 700;
+  }
+  75% {
+    transform: scaleX(0.8) scaleY(1.1);
+  }
+  100% {
+    transform: scaleX(1.1) scaleY(0.9);
+  }
+}
