@@ -1,0 +1,6 @@
+.container {
+  background-color: var(--homepage-bg-color);
+}
+.right {
+  margin-left: 200px;
+}

@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  row-gap: 20px;
+}
+.first {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+.textarea {
+  position: relative;
+}
+.form textarea {
+  width: 620px;
+  height: 200px;
+  background-color: var(--testarea-bg-color);
+  font-size: 1.2rem;
+  padding: 10px;
+  color: var(--testarea-text-color);
+  border: 0;
+  outline: 0;
+}
+.label::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  border-top: 3px solid #08FDD8;
+  transition: all 0.5s ease-in-out;
+}
+.text:focus + .label::after,
+.error + .label::after {
+  width: 100%;
+}
+.error,
+.error + .label::after {
+  color: var(--testarea-error-color);
+  border-color: var(--testarea-error-color);
+}
+.form button {
+  width: 200px;
+}

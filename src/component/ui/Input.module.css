@@ -1,0 +1,75 @@
+.container {
+  position: relative;
+  width: var(--input-width);
+}
+.input {
+  width: var(--input-width);
+  height: 2.6rem;
+  font-size: 1.2rem;
+  border: 0;
+  outline: 0;
+  border-color: var(--input-bg-color);
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: var(--input-bg-color);
+  box-shadow: none;
+  color: var(--input-text-color);
+}
+.indent {
+  padding-left: calc(15px + 1.3rem);
+}
+.input:focus::placeholder {
+  color: transparent;
+}
+.container .licon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(1.4rem + 10px);
+  height: 2.6rem;
+}
+.licon > svg {
+  width: 1.3rem;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  color: var(--input-text-color);
+}
+/* Change bg-color in autofill input */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover, 
+.input:-webkit-autofill:focus, 
+.input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--input-bg-color) inset !important;
+}
+/*Change text in autofill textbox*/
+.input:-webkit-autofill{
+    -webkit-text-fill-color: var(--input-text-color) !important;
+}
+.input:-webkit-autofill.error{
+  -webkit-text-fill-color: var(--input-error-color) !important;
+}
+.error,
+.error svg,
+.error + .label::after {
+  color: var(--input-error-color);
+  border-color: var(--input-error-color);
+}
+.label::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  border-top: 3px solid #08FDD8;
+  transition: all 0.5s ease-in-out;
+}
+.input:focus + .label::after,
+.error + .label::after {
+  width: 100%;
+}
